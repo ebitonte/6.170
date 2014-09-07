@@ -57,18 +57,18 @@ function carefulArrayChecking(n) {
 	} else {
 		return true;
 	}
-	return exception;
+	throw exception;
 }
 
 function carefulMakeArray(n, v) {
 	if(carefulArrayChecking(n)) {
-		makeArray(n, v);
+		return makeArray(n, v);
 	}
 }
 
 function incArray(n) {
 	var increment = Inc();
-	carefulMakeArray(n, increment);
+	return carefulMakeArray(n, increment);
 }
 
 function counterFromArray(n) {
@@ -82,7 +82,10 @@ function counterFromArray(n) {
 	return counterArray;
 }
 
-carefulMakeArray(1, 2);
+var array1 = carefulMakeArray(1, 2);
+console.log(array1);
+console.log(typeof(array1));
+
 
 /*
 console.log(makeArray(5, 4));
